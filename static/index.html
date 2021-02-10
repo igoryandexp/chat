@@ -14,7 +14,7 @@
         <div class="Card">
             <div class="Card__content">
                 <h1 class="Card__title">Вход</h1>
-                <form class="Form" action="">
+                <form class="Form" onsubmit="getFormData(); return false;">
                     <div class="Form-group">
                         <input id="login" name="login" class="Form-control" type="text" required>
                         <label for="login" class="Form-label">Логин</label>
@@ -25,7 +25,7 @@
                         <label for="password" class="Form-label">Пароль</label>
                     </div>
                     <div class="Button-group Form__actions">
-                        <button class="Button">Авторизоваться</button>
+                        <button class="Button" type="submit">Авторизоваться</button>
                         <div class="text-center">
                             <a href="#" class="Button-link">Нет аккаунта?</a>
                         </div>
@@ -34,6 +34,8 @@
             </div>
         </div>
     </div>
+    <script src="./js/index.js?001"></script>
+
 </body>
 
 </html>

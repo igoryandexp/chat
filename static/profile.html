@@ -97,7 +97,7 @@
                 </div>
                 <h1 class="Profile-avatar__title">Igor</h1>
             </div>
-            <form class="Form Profile-form" action="">
+            <form class="Form Profile-form" onsubmit="getFormData()">
                 <div class="Form-group">
                     <input id="email" name="email" class="Form-control Form-control_fixed" type="text" required
                         value="pochta@yandex.ru" disabled>
@@ -136,11 +136,11 @@
         </div>
     </div>
     <div class="Modal">
-        <div class="Modal__overlay">
+        <div class="Modal__overlay" onclick="removeModal()">
             <div class="Modal__container">
                 <div class="Modal__content">
                     <h1 class="Modal__title">Загрузите файл</h1>
-                    <form class="Form" action="#">
+                    <form class="Form" onsubmit="getFormData(); return false;">
                         <div class="Form-group">
                             <input id="email" name="email" class="Form-control" type="text" required>
                             <label for="email" class="Form-label">Почта</label>
@@ -160,6 +160,7 @@
             </div>
         </div>
     </div>
+    <script src="./js/index.js?001"></script>
 </body>
 
 </html>
