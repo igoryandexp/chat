@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат</title>
+    <link rel="stylesheet" href="./css/normalize.css?001">
+    <link rel="stylesheet" href="./css/index.css?001">
+</head>
+
+<body>
+    <svg style="display: none;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" id="search">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.592 8.414a3.667 3.667 0 11-5.185-5.186 3.667 3.667 0 015.185 5.186zm.44 1.383a5 5 0 11.944-.943l3.566 3.567-.943.943-3.566-3.567z"
+                fill="#999"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 10" id="arrow">
+            <path d="M1 9l4-4-4-4"></path>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 16" id="dots">
+            <circle cx="1.5" cy="2" r="1.5"></circle>
+            <circle cx="1.5" cy="8" r="1.5"></circle>
+            <circle cx="1.5" cy="14" r="1.5"></circle>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="plus">
+            <circle cx="11" cy="11" r="10.25" stroke="#3369F3" stroke-width="1.5"></circle>
+            <path stroke="#3369F3" stroke-width="1.5" d="M11 5.5v11M5.5 11h11"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="remove">
+            <circle cx="11" cy="11" r="10.25" stroke="#3369F3" stroke-width="1.5"></circle>
+            <path stroke="#3369F3" stroke-width="1.5" d="M7.111 7.111l7.778 7.778m-7.778 0l7.778-7.778"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 5" id="check">
+            <path stroke="#3369F3" d="M1.054 1.98l2.658 2.667"></path>
+            <path transform="matrix(.70593 -.70828 .70593 .70828 3.358 5)" stroke="#3369F3" d="M0-.5h5.647"></path>
+            <path transform="matrix(.70593 -.70828 .70593 .70828 6.016 5)" stroke="#3369F3" d="M0-.5h5.647"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="addMedia">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.187 13.5l7.576-7.576.943.943-7.577 7.576-.942-.943zM9.7 16.014l7.577-7.576.943.943-7.576 7.576-.943-.943zm5.343 5.343l7.576-7.576.943.942-7.576 7.576-.943-.942zm2.514 2.513l7.577-7.575.942.942-7.576 7.577-.943-.943z"
+                fill="#999"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M17.557 23.87c-2.615 2.616-6.845 2.625-9.449.022-2.603-2.604-2.594-6.834.021-9.45l-.942-.942c-3.139 3.138-3.15 8.215-.026 11.339 3.125 3.124 8.201 3.113 11.34-.025l-.944-.943zm5.063-10.09l.942.943c2.441-2.44 2.45-6.389.02-8.819-2.43-2.43-6.379-2.421-8.82.02l.944.943c1.917-1.918 5.02-1.925 6.929-.016 1.91 1.91 1.902 5.012-.016 6.93z"
+                fill="#999"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M9.7 16.014c-1.742 1.744-1.749 4.564-.013 6.3 1.736 1.735 4.556 1.73 6.3-.014l-.944-.943a3.118 3.118 0 01-4.41.01 3.118 3.118 0 01.01-4.41l-.942-.943z"
+                fill="#999"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="photo">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4 1.5h14A2.5 2.5 0 0120.5 4v10l-5.98-1.595A11.998 11.998 0 0011.427 12h-.856c-1.043 0-2.083.136-3.091.405L1.5 14V4A2.5 2.5 0 014 1.5zM0 4a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4H4a4 4 0 01-4-4V4zm8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                fill="#3369F3"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="file">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4 1.5h14A2.5 2.5 0 0120.5 4v8H16a4 4 0 00-4 4v4.5H4A2.5 2.5 0 011.5 18V4A2.5 2.5 0 014 1.5zM12 22H4a4 4 0 01-4-4V4a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4h-6z"
+                fill="#3369F3"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="geo">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M20.5 11a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0zm1.5 0c0 6.075-4.925 11-11 11S0 17.075 0 11 4.925 0 11 0s11 4.925 11 11zm-11 3a3 3 0 100-6 3 3 0 000 6z"
+                fill="#3369F3"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" id="send">
+            <circle cx="14" cy="14" r="14" fill="#3369F3"></circle>
+            <path fill="#fff" d="M8 13.2h11v1.6H8z"></path>
+            <path d="M15 9l4 5-4 5" stroke="#fff" stroke-width="1.6"></path>
+        </symbol>
+    </svg>
+    <div class="Layout">
+        <div class="Sidebar">
+            <nav class="Sidebar-nav">
+                <ul class="Menu Sidebar-nav__menu">
+                    <li class="Menu__item">
+                        <a class="Menu__link" href="#">
+                            Профиль
+                            <svg class="Menu__icon">
+                                <use xlink:href="#arrow">
+                                </use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <form action="" class="Search-form Sidebar-nav__search-form">
+                    <input id="searchInput" name="search" class="Search-form__input" type="text" required
+                        autocomplete="off">
+                    <label for="searchInput" class="Search-form__label">
+                        <svg class="Search-form__label-icon">
+                            <use xlink:href="#search">
+                            </use>
+                        </svg>
+                        <span class="Search-form__label-text">Поиск</span>
+                    </label>
+                </form>
+            </nav>
+            <div class="Sidebar-list">
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Igor</h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text"><span>Вы:</span> Lorem ipsum</p>
+                                <!-- <span class="Chat-item__count">22</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта 12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">222</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="Content">
+            <div class="Content-nav">
+                <div class="Content-chat-name">
+                    <div class="Content-chat-name__img-wrap">
+                        <img class="Content-chat-name__img" src="./images/avatar.png" alt="">
+                    </div>
+                    <h1 class="Content-chat-name__title">Igor</h1>
+                </div>
+                <ul class="Menu">
+                    <li class="Menu__item">
+                        <a class="Menu__button-round" href="#" title="Действия">
+                            <svg class="Menu__button-round-icon">
+                                <title>Действия</title>
+                                <use xlink:href="#dots">
+                                </use>
+                            </svg>
+                        </a>
+                        <ul class="Dropdown-menu">
+                            <li class="Dropdown-menu__item">
+                                <a href="#" class="Dropdown-menu__link">
+                                    <svg class="Dropdown-menu__icon">
+                                        <title>Добавить</title>
+                                        <use xlink:href="#plus">
+                                        </use>
+                                    </svg>
+                                    Добавить пользователя
+                                </a>
+                            </li>
+                            <li class="Dropdown-menu__item">
+                                <a href="#" class="Dropdown-menu__link">
+                                    <svg class="Dropdown-menu__icon">
+                                        <title>Добавить</title>
+                                        <use xlink:href="#remove">
+                                        </use>
+                                    </svg>
+                                    Удалить пользователя
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- TODO: Добавить прокрутку вниз по умолчанию -->
+            <div class="Content-messages">
+                <div class="Message-row">
+                    <div class="Message">
+                        <p>Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то
+                            момент
+                            попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что
+                            астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще
+                            находятся на
+                            поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.</p>
+
+                        <p>Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так
+                            никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на
+                            аукционе
+                            за 45000 евро. <time class="Message__time">11:56</time></p>
+
+                    </div>
+                </div>
+                <div class="Message-row">
+                    <div class="Message">
+                        <p>Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то
+                            момент
+                            попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что
+                            астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще
+                            находятся на
+                            поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.</p>
+
+                        <p>Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так
+                            никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на
+                            аукционе
+                            за 45000 евро. <time class="Message__time">11:56</time></p>
+
+                    </div>
+                </div>
+                <div class="Message-row">
+                    <div class="Message">
+                        <p>Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то
+                            момент
+                            попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что
+                            астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще
+                            находятся на
+                            поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.</p>
+
+                        <p>Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так
+                            никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на
+                            аукционе
+                            за 45000 евро. <time class="Message__time">11:56</time></p>
+
+                    </div>
+                </div>
+                <div class="Message-row">
+                    <div class="Message Message_img">
+                        <img src="./images/test.jpg" alt="">
+                        <time class="Message__time-img">11:56</time>
+                    </div>
+                </div>
+                <div class="Message-divider"></div>
+                <div class="Message-row">
+                    <div class="Message Message_right">
+                        <p>Круто
+                            <time class="Message__time Message__time_right">
+                                <svg class="Message__check">
+                                    <title>Доставлено</title>
+                                    <use xlink:href="#check">
+                                    </use>
+                                </svg>
+                                11:56
+                            </time>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="Content-editor">
+                <div class="Editor">
+                    <div class="Editor-media">
+                        <button class="Editor-media-button">
+                            <svg class="Editor-media-button__icon">
+                                <title>Прикрепить</title>
+                                <use xlink:href="#addMedia">
+                                </use>
+                            </svg>
+                        </button>
+                        <ul class="Dropdown-menu Dropdown-menu_bottom">
+                            <li class="Dropdown-menu__item">
+                                <a href="#" class="Dropdown-menu__link">
+                                    <svg class="Dropdown-menu__icon">
+                                        <title>Фото или Видео</title>
+                                        <use xlink:href="#photo">
+                                        </use>
+                                    </svg>
+                                    Фото или Видео
+                                </a>
+                            </li>
+                            <li class="Dropdown-menu__item">
+                                <a href="#" class="Dropdown-menu__link">
+                                    <svg class="Dropdown-menu__icon">
+                                        <title>Файл</title>
+                                        <use xlink:href="#file">
+                                        </use>
+                                    </svg>
+                                    Файл
+                                </a>
+                            </li>
+                            <li class="Dropdown-menu__item">
+                                <a href="#" class="Dropdown-menu__link">
+                                    <svg class="Dropdown-menu__icon">
+                                        <title>Локация</title>
+                                        <use xlink:href="#geo">
+                                        </use>
+                                    </svg>
+                                    Локация
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- TODO: Удалить плейсхолдер при вводе -->
+                    <div class="Editor-input" contenteditable="true" aria-multiline="true">
+                        <div class="Editor-input__placeholder">Сообщение</div>
+                    </div>
+                    <button class="Editor-send-button" title="Отправить">
+                        <svg class="Editor-send-button__icon">
+                            <title>Отправить</title>
+                            <use xlink:href="#send">
+                            </use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

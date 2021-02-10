@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат</title>
+    <link rel="stylesheet" href="./css/normalize.css?001">
+    <link rel="stylesheet" href="./css/index.css?001">
+</head>
+
+<body>
+    <svg style="display: none;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" id="search">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.592 8.414a3.667 3.667 0 11-5.185-5.186 3.667 3.667 0 015.185 5.186zm.44 1.383a5 5 0 11.944-.943l3.566 3.567-.943.943-3.566-3.567z"
+                fill="#999"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 10" id="arrow">
+            <path d="M1 9l4-4-4-4"></path>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 16" id="dots">
+            <circle cx="1.5" cy="2" r="1.5"></circle>
+            <circle cx="1.5" cy="8" r="1.5"></circle>
+            <circle cx="1.5" cy="14" r="1.5"></circle>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="plus">
+            <circle cx="11" cy="11" r="10.25" stroke="#3369F3" stroke-width="1.5"></circle>
+            <path stroke="#3369F3" stroke-width="1.5" d="M11 5.5v11M5.5 11h11"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="remove">
+            <circle cx="11" cy="11" r="10.25" stroke="#3369F3" stroke-width="1.5"></circle>
+            <path stroke="#3369F3" stroke-width="1.5" d="M7.111 7.111l7.778 7.778m-7.778 0l7.778-7.778"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 5" id="check">
+            <path stroke="#3369F3" d="M1.054 1.98l2.658 2.667"></path>
+            <path transform="matrix(.70593 -.70828 .70593 .70828 3.358 5)" stroke="#3369F3" d="M0-.5h5.647"></path>
+            <path transform="matrix(.70593 -.70828 .70593 .70828 6.016 5)" stroke="#3369F3" d="M0-.5h5.647"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="addMedia">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.187 13.5l7.576-7.576.943.943-7.577 7.576-.942-.943zM9.7 16.014l7.577-7.576.943.943-7.576 7.576-.943-.943zm5.343 5.343l7.576-7.576.943.942-7.576 7.576-.943-.942zm2.514 2.513l7.577-7.575.942.942-7.576 7.577-.943-.943z"
+                fill="#999"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M17.557 23.87c-2.615 2.616-6.845 2.625-9.449.022-2.603-2.604-2.594-6.834.021-9.45l-.942-.942c-3.139 3.138-3.15 8.215-.026 11.339 3.125 3.124 8.201 3.113 11.34-.025l-.944-.943zm5.063-10.09l.942.943c2.441-2.44 2.45-6.389.02-8.819-2.43-2.43-6.379-2.421-8.82.02l.944.943c1.917-1.918 5.02-1.925 6.929-.016 1.91 1.91 1.902 5.012-.016 6.93z"
+                fill="#999"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M9.7 16.014c-1.742 1.744-1.749 4.564-.013 6.3 1.736 1.735 4.556 1.73 6.3-.014l-.944-.943a3.118 3.118 0 01-4.41.01 3.118 3.118 0 01.01-4.41l-.942-.943z"
+                fill="#999"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="photo">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4 1.5h14A2.5 2.5 0 0120.5 4v10l-5.98-1.595A11.998 11.998 0 0011.427 12h-.856c-1.043 0-2.083.136-3.091.405L1.5 14V4A2.5 2.5 0 014 1.5zM0 4a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4H4a4 4 0 01-4-4V4zm8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                fill="#3369F3"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="file">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4 1.5h14A2.5 2.5 0 0120.5 4v8H16a4 4 0 00-4 4v4.5H4A2.5 2.5 0 011.5 18V4A2.5 2.5 0 014 1.5zM12 22H4a4 4 0 01-4-4V4a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4h-6z"
+                fill="#3369F3"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="geo">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M20.5 11a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0zm1.5 0c0 6.075-4.925 11-11 11S0 17.075 0 11 4.925 0 11 0s11 4.925 11 11zm-11 3a3 3 0 100-6 3 3 0 000 6z"
+                fill="#3369F3"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" id="send">
+            <circle cx="14" cy="14" r="14" fill="#3369F3"></circle>
+            <path fill="#fff" d="M8 13.2h11v1.6H8z"></path>
+            <path d="M15 9l4 5-4 5" stroke="#fff" stroke-width="1.6"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" id="avatarPhoto">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M36 2H4a2 2 0 00-2 2v21.267l12.655-2.953A11.999 11.999 0 0117.38 22h5.238c.918 0 1.832.105 2.726.314L38 25.267V4a2 2 0 00-2-2zM4 0a4 4 0 00-4 4v32a4 4 0 004 4h32a4 4 0 004-4V4a4 4 0 00-4-4H4zm6.91 14.546a3.636 3.636 0 10-.001-7.273 3.636 3.636 0 000 7.273z"
+                fill="#CDCDCD"></path>
+        </symbol>
+    </svg>
+    <div class="Sidenav" title="Назад">
+        <svg class="Sidenav-button__icon">
+            <title>Назад</title>
+            <use xlink:href="#send">
+            </use>
+        </svg>
+    </div>
+    <div class="Container Container--center">
+        <div class="Card Card_no-shadow Card_lg">
+            <div class="Profile-avatar">
+                <div class="Profile-avatar__img-wrap">
+                    <svg class="Profile-avatar__img">
+                        <title>Фото</title>
+                        <use xlink:href="#avatarPhoto">
+                        </use>
+                    </svg>
+                    <!-- <img class="Profile-avatar__img-full" src="./images/test.jpg" alt=""> -->
+                    <div class="Profile-avatar-change">
+                        Поменять <br> аватар
+                    </div>
+                </div>
+                <h1 class="Profile-avatar__title">Igor</h1>
+            </div>
+            <form class="Form Profile-form" action="">
+                <div class="Form-group">
+                    <input id="email" name="email" class="Form-control Form-control_fixed" type="text" required
+                        value="pochta@yandex.ru" disabled>
+                    <label for="email" class="Form-label Form-label_fixed">Почта</label>
+                </div>
+                <div class="Form-group">
+                    <input id="login" name="login" class="Form-control Form-control_fixed" type="text" required
+                        value="ivanivanov" disabled>
+                    <label for="login" class="Form-label Form-label_fixed">Логин</label>
+                </div>
+                <div class="Form-group">
+                    <input id="firstName" name="first_name" class="Form-control Form-control_fixed" type="text" required
+                        value="Иван">
+                    <label for="firstName" class="Form-label Form-label_fixed">Имя</label>
+                </div>
+                <div class="Form-group">
+                    <input id="secondName" name="second_name" class="Form-control Form-control_fixed" type="text"
+                        required value="Иванов">
+                    <label for="secondName" class="Form-label Form-label_fixed">Фамилия</label>
+                </div>
+                <div class="Form-group">
+                    <input id="phone" name="phone" class="Form-control Form-control_fixed" type="text" required
+                        value="+7 (909) 967 30 30">
+                    <label for="phone" class="Form-label Form-label_fixed">Телефон</label>
+                </div>
+                <div class="Button-group Form__actions Profile-button-group">
+                    <button class="Button Profile-button">Сохранить</button>
+                </div>
+            </form>
+            <div class="Button-group Form__actions Profile-button-group">
+                <div class="text-center"><button class="Button-link Button-link_lg">Изменить данные</button></div>
+                <div class="text-center"><button class="Button-link Button-link_lg">Изменить пароль</button></div>
+                <div class="text-center"><button class="Button-link Button-link_lg Button-link_danger">Выйти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Modal">
+        <div class="Modal__overlay">
+            <div class="Modal__container">
+                <div class="Modal__content">
+                    <h1 class="Modal__title">Загрузите файл</h1>
+                    <form class="Form" action="#">
+                        <div class="Form-group">
+                            <input id="email" name="email" class="Form-control" type="text" required>
+                            <label for="email" class="Form-label">Почта</label>
+                        </div>
+                        <div class="Form-group">
+                            <input id="login" name="login" class="Form-control" type="text" required>
+                            <label for="login" class="Form-label">Логин</label>
+                        </div>
+                        <div class="Button-group Form__actions">
+                            <button class="Button">Поменять</button>
+                            <div class="text-center">
+                                <a href="#" class="Button-link">Войти</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

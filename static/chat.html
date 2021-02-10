@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат</title>
+    <link rel="stylesheet" href="./css/normalize.css?001">
+    <link rel="stylesheet" href="./css/index.css?001">
+</head>
+
+<body>
+    <svg style="display: none;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" id="search">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.592 8.414a3.667 3.667 0 11-5.185-5.186 3.667 3.667 0 015.185 5.186zm.44 1.383a5 5 0 11.944-.943l3.566 3.567-.943.943-3.566-3.567z"
+                fill="#999"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 10" id="arrow">
+            <path d="M1 9l4-4-4-4"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 16" id="dots">
+            <circle cx="1.5" cy="2" r="1.5" fill="#1E1E1E"></circle>
+            <circle cx="1.5" cy="8" r="1.5" fill="#1E1E1E"></circle>
+            <circle cx="1.5" cy="14" r="1.5" fill="#1E1E1E"></circle>
+        </symbol>
+    </svg>
+    <div class="Layout">
+        <div class="Sidebar">
+            <nav class="Sidebar-nav">
+                <ul class="Menu Sidebar-nav__menu">
+                    <li class="Menu__item">
+                        <a class="Menu__link" href="#">
+                            Профиль
+                            <svg class="Menu__icon">
+                                <use xlink:href="#arrow">
+                                </use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <form action="" class="Search-form Sidebar-nav__search-form">
+                    <input id="searchInput" name="search" class="Search-form__input" type="text" required
+                        autocomplete="off">
+                    <label for="searchInput" class="Search-form__label">
+                        <svg class="Search-form__label-icon">
+                            <use xlink:href="#search">
+                            </use>
+                        </svg>
+                        <span class="Search-form__label-text">Поиск</span>
+                    </label>
+                </form>
+            </nav>
+            <div class="Sidebar-list">
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Igor</h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text"><span>Вы:</span> Lorem ipsum</p>
+                                <!-- <span class="Chat-item__count">22</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">2222</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Sidebar-list__item">
+                    <div class="Sidebar-list__content">
+                        <div class="Chat-item">
+                            <div class="Chat-item__img-wrap">
+                                <img class="Chat-item__img" src="./images/avatar.png" alt="">
+                            </div>
+                            <div class="Chat-item__content">
+                                <h3 class="Chat-item__title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                </h3>
+                                <time class="Chat-item__time">12 марта</time>
+                                <p class="Chat-item__text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                                    ipsum dolor sit amet.</p>
+                                <span class="Chat-item__count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="Content">
+            <div class="Container Container--center">
+                <h2 class="Content-title">Выберите чат чтобы отправить сообщение</h2>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
