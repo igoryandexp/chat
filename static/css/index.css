@@ -1048,3 +1048,34 @@ Modal
   text-align: center;
   color: var(--text-black);
 }
+
+/*****************************
+Error
+*****************************/
+
+.Error {
+}
+
+.Error__title {
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: var(--text-black);
+}
+
+.Error__text {
+  margin: 20px 0 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--text-black);
+}
+
+.Error__actions {
+  margin-top: 70px;
+}

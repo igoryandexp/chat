@@ -14,7 +14,7 @@
         <div class="Card">
             <div class="Card__content">
                 <h1 class="Card__title">Регистрация</h1>
-                <form class="Form" action="#">
+                <form class="Form" onsubmit="getFormData(); return false;">
                     <div class="Form-group">
                         <input id="email" name="email" class="Form-control" type="text" required>
                         <label for="email" class="Form-label">Почта</label>
@@ -55,6 +55,8 @@
             </div>
         </div>
     </div>
+    <script src="./js/index.js?001"></script>
+
 </body>
 
 </html>
